@@ -1,0 +1,191 @@
+// GLOBAL
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after, input[type="search"] {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+body {
+  background: $primary-color url(../graphics/layout/main-bg.svg) -48vw top no-repeat;
+  background-size: cover; 
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-style: $base-font-style;
+  min-width: $row-min-width;
+  @extend .antialiased;
+}
+
+// Links
+
+a {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: underline;
+  transition: opacity 0.2s ease 0s;
+  @include transform(translateZ(0));
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  opacity: 0.64;
+  outline: none;
+}
+
+a:active{
+  outline: none;
+  @include transform(translate(0, 1px));
+}
+
+
+// Rows
+
+.row {
+  @extend .clearfix;
+  padding-left: $inner-pad;
+  padding-right: $inner-pad;
+  @include media(small-up) {
+    padding-left: $inner-pad*2;
+    padding-right: $inner-pad*2;
+  }
+  @include media(xlarge-up) {
+    padding-left: $inner-pad*4;
+    padding-right: $inner-pad*4;
+  }
+}
+
+.centered {
+  max-width: $row-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// SITE HEADER
+
+#site-header {
+  @extend .row;
+  @extend .centered;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-transform: uppercase;
+  font-weight: $base-font-bold;
+}
+
+#site-title {
+  position: relative;
+  font-size: 6rem;
+  line-height: 1;
+  padding-top: 2rem;
+  margin: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include transform(translate(-50%, 0));
+    height: 0.75rem;
+    width: 10rem;
+    background: #fff;
+  }
+}
+
+#site-description {
+  font-size: 1.5rem;
+  margin: 1rem 0 0 0;
+}
+
+#site-actions {
+  margin: 2rem 0 0 0;
+}
+
+.button-download {
+  display: inline-block;
+  background: rgba(#fff, 0.16);
+  font-size: 1.25rem;
+  line-height: 3rem;
+  text-align: center;
+  padding: 0 1rem;
+  width: 10rem;
+  text-decoration: none;
+}
+
+
+// STRIPES
+
+.stripe {
+  @extend .row;
+  @extend .centered;
+  margin-bottom: 4rem;
+}
+
+.stripe-title {
+  text-transform: uppercase;
+  font-weight: $base-font-bold;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include transform(translate(-50%, 0));
+    height: 0.35rem;
+    width: 4rem;
+    background: #fff;
+  }
+  .showcase & {
+    @extend .visually-hidden;
+  }
+}
+
+.stripe-content {
+  @include span-columns(12 of 12);
+  @include media(small-up) {
+    @include span-columns(10 of 12);
+    @include shift(1);
+  }
+  @include media(large-up) {
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
+}
+
+.showcase-list {
+  margin: 0;
+  padding: 0;
+  @extend .clearfix;
+  li {
+    float: left;
+    margin: 0.5rem;
+  }
+  a {
+    display: block;
+    background: rgba(#fff, 0.16);
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    text-decoration: none;
+    .label {
+      @extend .visually-hidden;
+    }
+  }
+}
