@@ -79,17 +79,25 @@ a:active{
   @extend .row;
   @extend .centered;
   text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   text-transform: uppercase;
   font-weight: $base-font-bold;
+  @include media(small-up) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include media(medium-up) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 #site-title {
   position: relative;
-  font-size: 6rem;
+  font-size: 2rem;
   line-height: 1;
-  padding-top: 2rem;
+  padding-top: 3.2%;
   margin: 0;
   &:before {
     content: "";
@@ -97,30 +105,63 @@ a:active{
     top: 0;
     left: 50%;
     @include transform(translate(-50%, 0));
-    height: 0.75rem;
-    width: 10rem;
+    width: 12%;
+    height: 10%;
+    max-width: 10rem;
     background: #fff;
+  }
+  @include media(small-up) {
+    font-size: 3rem;
+  }
+  @include media(medium-up) {
+    font-size: 4rem;
+  }
+  @include media(large-up) {
+    font-size: 5rem;
+  }
+  @include media(xlarge-up) {
+    font-size: 6rem;
   }
 }
 
 #site-description {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 1rem 0 0 0;
+  @include media(small-up) {
+    font-size: 1.25rem;
+  }
+  @include media(medium-up) {
+    font-size: 1.5rem;
+  }
 }
 
 #site-actions {
   margin: 2rem 0 0 0;
+  small {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: $base-font-weight;
+    text-transform: none;
+    margin-top: 0.5rem;
+    opacity: 0.64;
+  }
 }
 
 .button-download {
   display: inline-block;
-  background: rgba(#fff, 0.16);
-  font-size: 1.25rem;
-  line-height: 3rem;
+  background: #fff;
+  font-size: 1rem;
+  line-height: 2.5rem;
   text-align: center;
   padding: 0 1rem;
   width: 12rem;
   text-decoration: none;
+  color: $primary-color;
+  @include media(small-up) {
+    line-height: 3rem;
+    font-size: 1.25rem;
+  }
 }
 
 
@@ -129,29 +170,36 @@ a:active{
 .stripe {
   @extend .row;
   @extend .centered;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  @include media(medium-up) {
+    margin-bottom: 4rem;
+  }
 }
 
 .stripe-title {
+  @include heading(1.25rem, xlarge-up);
   text-transform: uppercase;
   font-weight: $base-font-bold;
-  font-size: 2.5rem;
   text-align: center;
   position: relative;
-  padding-top: 0.5rem;
-  margin-bottom: 2rem;
+  padding-top: 1%;
+  margin-bottom: 1.5rem;
   &:before {
     content: "";
     position: absolute;
     top: 0;
     left: 50%;
     @include transform(translate(-50%, 0));
-    height: 0.35rem;
-    width: 4rem;
+    height: 8%;
+    width: 8%;
+    max-width: 4rem;
     background: #fff;
   }
   .showcase & {
     @extend .visually-hidden;
+  }
+  @include media(small-up) {
+    margin-bottom: 2rem;
   }
 }
 
@@ -171,8 +219,11 @@ a:active{
   margin: 0;
   padding: 0;
   @extend .clearfix;
+  text-align: center;
+  word-spacing: -0.26rem;
   li {
-    float: left;
+    display: inline-block;
+    word-spacing: normal;
     margin: 0.5rem;
   }
   a {
@@ -184,11 +235,38 @@ a:active{
     width: 4rem;
     text-align: center;
     text-decoration: none;
+    &:hover {
+      opacity: 1;
+    }
     .label {
       @extend .visually-hidden;
     }
   }
 }
+
+
+// SITE FOOTER
+
+#site-footer {
+  @extend .row;
+  @extend .centered;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  opacity: 0.64;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  .collecticon {
+    font-weight: normal;
+    vertical-align: middle;
+    font-size: 1rem;
+    span {
+      @extend .visually-hidden;
+    }
+  }
+}
+
 
 // TITLED
 
@@ -204,10 +282,9 @@ a:active{
     max-width: 12rem;
     padding: 0 0.5rem;
     background: rgba($base-color, 0.8);
-    border-radius: $global-radius;
     margin-top: 0.25rem;
     @include transform(translate(-50%, 0));
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     color: #fff;
     @extend .truncated;
@@ -216,6 +293,5 @@ a:active{
     font-family: $base-font-family;
     font-weight: $base-font-regular;
     font-style: $base-font-style;
-    text-transform: uppercase;
   }
 }
