@@ -6,3 +6,9 @@ bower_components
 test/bower_components
 npm-debug.log
 app/assets/scripts/config/local.js
+
+# Webfont files
+app/assets/fonts/
+app/assets/styles/icons.css
+app/catalog.json
+app/collecticons.zip
