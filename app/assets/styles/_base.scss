@@ -165,11 +165,15 @@ a:active{
   padding: 0 1rem;
   width: 12rem;
   text-decoration: none;
-  color: $primary-color;
   @include media(small-up) {
     line-height: 3rem;
     font-size: 1.25rem;
   }
+}
+
+.button-download,
+.button-download:visited {
+  color: $primary-color;
 }
 
 // SITE BODY
