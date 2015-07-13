@@ -44,14 +44,23 @@
   </head>
   <body>
 
-    <div id="site-canvas">
+    <div id="site-canvas"><!-- Content via javascript --></div>
+
+    <script id="page-template" type="text/template" class="template">
       <header id="site-header" role="banner">
         <h1 id="site-title">Collecticons</h1>
         <p id="site-description">An evergroing collection of crisp icons.</p>
-        <p id="site-actions"><a href="collecticons.zip" title="Get the icons!" class="button-download"><span>Download</span></a> <small>V0.1 / 45 icons</small></p>
+        <p id="site-actions"><a href="collecticons.zip" title="Get the icons!" class="button-download"><span>Download</span></a> <small>V0.1 / <%= icons.length %> icons</small></p>
       </header>
-      <main id="site-body" data-hook="showcase-holder" role="main">
-        <!-- Showcase section via javascript -->
+      <main id="site-body" role="main">
+        <section class="stripe showcase">
+          <h2 class="stripe-title">Showcase</h2>
+          <ul class="showcase-list">
+            <% icons.forEach(function(i) { %>
+              <li><a href="#" data-hook="icon-link" data-title="<%= i.icon.replace('collecticon-', '') %>"><span class="label"><%= i.icon %></span><span class="collecticon <%= i.icon %>"></span></a></li>
+            <% }) %>
+          </ul>
+        </section>
         <section class="stripe usage">
           <h2 class="stripe-title">Usage</h2>
           <div class="stripe-content prose">
@@ -87,17 +96,6 @@
       <footer id="site-footer" role="contentinfo">
         <p>Made with <strong class="collecticon collecticon-heart-full"><span>love</span></strong> by <a href="https://developmentseed.org" title="Visit Development Seed website">Development Seed</a>.</p>
       </footer>
-    </div>
-
-    <script id="showcase-section" type="text/template" class="template">
-      <section class="stripe showcase">
-        <h2 class="stripe-title">Showcase</h2>
-        <ul class="showcase-list">
-          <% icons.forEach(function(i) { %>
-            <li><a href="#" data-hook="icon-link" data-title="<%= i.icon.replace('collecticon-', '') %>"><span class="label"><%= i.icon %></span><span class="collecticon <%= i.icon %>"></span></a></li>
-          <% }) %>
-        </ul>
-      </section>
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

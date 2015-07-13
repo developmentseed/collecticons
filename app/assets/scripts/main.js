@@ -2,8 +2,8 @@ var $ = require('jquery');
 var _ = require('lodash');
 
 $(function () {
-  var template = _.template($('#showcase-section').html());
-  var $container = $('[data-hook="showcase-holder"]');
+  var template = _.template($('#page-template').html());
+  var $container = $('#site-canvas');
   // Render icons from catalog.
   $.get('catalog.json')
     .success(function (res) {
