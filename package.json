@@ -1,20 +1,20 @@
 {
-  "name": "project-seed",
-  "version": "0.1.0",
-  "description": "A basic project starting template.",
+  "name": "collecticons",
+  "version": "0.0.1",
+  "description": "An evergroing collection of crisp icons.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/developmentseed/project-seed.git"
+    "url": "https://github.com/developmentseed/collecticons.git"
   },
   "author": {
     "name": "Development Seed",
     "url": "https://developmentseed.org"
   },
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/developmentseed/project-seed/issues"
+    "url": "https://github.com/developmentseed/collecticons/issues"
   },
-  "homepage": "https://github.com/developmentseed/project-seed",
+  "homepage": "https://github.com/developmentseed/collecticons",
   "scripts": {
     "serve": "gulp serve",
     "build": "gulp",
@@ -60,7 +60,11 @@
     "semistandard": "^5.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.1"
+    "watchify": "^3.2.1",
+    "collecticons-processor": "git://github.com/developmentseed/collecticons-processor"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.0"
+  }
 }

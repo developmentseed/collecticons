@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var cp = require('child_process');
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
@@ -73,6 +74,43 @@ gulp.task('build', ['javascript'], function () {
       .pipe(exit());
   });
 });
+
+////////////////////////////////////////////////////////////////////////////////
+//------------------------- Collecticon tasks --------------------------------//
+//--------------------- (Font generation related) ----------------------------//
+//----------------------------------------------------------------------------//
+gulp.task('collecticons:compile', function (done) {
+  var args = [
+    'node_modules/collecticons-processor/bin/collecticons.js',
+    'compile',
+    'collecticons-lib/svg/',
+    '--font-embed',
+    '--font-dest', 'app/assets/fonts',
+    '--font-types', 'woff',
+    '--style-format', 'css',
+    '--style-dest', 'app/assets/styles/',
+    '--catalog-dest','app/',
+    '--no-preview'
+  ];
+
+  return cp.spawn('node', args, {stdio: 'inherit'})
+    .on('close', done);
+});
+
+gulp.task('collecticons:bundle', function (done) {
+  var args = [
+    'node_modules/collecticons-processor/bin/collecticons.js',
+    'bundle',
+    'collecticons-lib/svg/',
+    'app/collecticons.zip'
+  ];
+
+  return cp.spawn('node', args, {stdio: 'inherit'})
+    .on('close', done);
+});
+
+// Group tasks.
+gulp.task('collecticons', ['collecticons:compile', 'collecticons:bundle']);
 
 ////////////////////////////////////////////////////////////////////////////////
 //------------------------- Browserify tasks ---------------------------------//
