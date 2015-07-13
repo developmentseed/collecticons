@@ -224,15 +224,15 @@ a:active{
   li {
     display: inline-block;
     word-spacing: normal;
-    margin: 0.5rem;
+    margin: 0.25rem;
   }
   a {
     display: block;
     background: rgba(#fff, 0.16);
-    font-size: 2rem;
-    line-height: 4rem;
-    height: 4rem;
-    width: 4rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    height: 2rem;
+    width: 2rem;
     text-align: center;
     text-decoration: none;
     &:hover {
@@ -240,6 +240,17 @@ a:active{
     }
     .label {
       @extend .visually-hidden;
+    }
+  }
+  @include media(small-up) {
+    li {
+      margin: 0.5rem;
+    }
+    a {
+      font-size: 2rem;
+      line-height: 4rem;
+      height: 4rem;
+      width: 4rem;
     }
   }
 }
