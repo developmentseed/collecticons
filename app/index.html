@@ -55,6 +55,25 @@
         <section class="stripe usage">
           <h2 class="stripe-title">Usage</h2>
           <div class="stripe-content prose">
+            <h3>Adding to your project as a webfont</h3>
+            <ol>
+              <li><p><a href="/collecticons.zip" title="Get the icons!">Download Collecticons</a> and copy the <code>font</code> folder and <code>icons.css</code> file into your project. This example assumes you've copied these into the root directory.</p></li>
+              <li>
+                <p>Link to the <code>icons.css</code> stylesheet in the <code>&lt;head&gt;</code> of your <code>&lt;html&gt;</code> page:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/icons.css"</span><span class="nt">&gt;</span></code></pre></div>
+              </li>
+              <li>
+                <p>Simply use an icon in your HTML page:</p>
+                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"collecticon collecticon-house"</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+              </li>
+            </ol>
+            <p>If you choose to separate the font files from the CSS files, be sure to update the links in <code>icons.css</code>.</p>
+            <p>Collecticons look best in sizes that are multiples of <strong>16px</strong>.</p>
+          </div>
+        </section>
+        <section class="stripe about">
+          <h2 class="stripe-title">About</h2>
+          <div class="stripe-content prose">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

@@ -49,7 +49,7 @@ h6, .hd-xxs {
   }
 
   code, pre {
-    background: tint($base-color, 96%);
+    background: rgba(#fff, 0.16);
   }
 
   code {
@@ -57,12 +57,15 @@ h6, .hd-xxs {
     font-size: 80%;
   }
 
+  pre code {
+    background: none;
+  }
+
   pre {
     display: block;
     padding: 1rem;
     word-break: break-all;
     word-wrap: break-word;
-    box-shadow: inset 0 0 0 1px $brdr-rgba;
     overflow: auto;
   }
 

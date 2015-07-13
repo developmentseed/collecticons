@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-  background: $primary-color url(../graphics/layout/main-bg.svg) -48vw top no-repeat;
+  background: $primary-color url(../graphics/layout/main-bg.svg) -80vw center no-repeat fixed;
   background-size: cover; 
   color: $base-font-color;
   font-family: $base-font-family;
@@ -23,6 +23,13 @@ body {
   font-style: $base-font-style;
   min-width: $row-min-width;
   @extend .antialiased;
+  @include media(small-up) {
+    background-position: -48vw center;
+  }
+  @include media(medium-up) {
+    background-position: -48vw top;
+    @include animation(main-bg 4s ease 0s 1);
+  }
 }
 
 // Links
@@ -83,6 +90,7 @@ a:active{
   padding-bottom: 2rem;
   text-transform: uppercase;
   font-weight: $base-font-bold;
+  @include animation(fade-in 1s ease 0s 1);
   @include media(small-up) {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -164,6 +172,12 @@ a:active{
   }
 }
 
+// SITE BODY
+
+#site-body {
+  @include animation(fade-in 3s ease 0s 1);
+}
+
 
 // STRIPES
 
@@ -235,6 +249,7 @@ a:active{
     width: 2rem;
     text-align: center;
     text-decoration: none;
+    cursor: help;
     &:hover {
       opacity: 1;
     }
@@ -268,6 +283,7 @@ a:active{
   opacity: 0.64;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  @include animation(fade-in 2s ease 0s 1);
   .collecticon {
     font-weight: normal;
     vertical-align: middle;
@@ -287,13 +303,13 @@ a:active{
     content: attr(data-title);
     position: absolute;
     left: 50%;
-    top: 100%;
+    bottom: 100%;
     z-index: 1400;
     width: auto;
     max-width: 12rem;
     padding: 0 0.5rem;
     background: rgba($base-color, 0.8);
-    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     @include transform(translate(-50%, 0));
     font-size: 1rem;
     line-height: 1.5rem;
@@ -304,5 +320,26 @@ a:active{
     font-family: $base-font-family;
     font-weight: $base-font-regular;
     font-style: $base-font-style;
+  }
+}
+
+
+// ANIMATION
+
+@include keyframes(main-bg) {
+  from {
+    background-position: -44vw top;
+  }
+  to {
+    background-position: -48vw top;
+  }
+}
+
+@include keyframes(fade-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    background-size: 1;
   }
 }
