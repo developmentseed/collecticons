@@ -119,7 +119,7 @@ a:active{
   line-height: 3rem;
   text-align: center;
   padding: 0 1rem;
-  width: 10rem;
+  width: 12rem;
   text-decoration: none;
 }
 
@@ -187,5 +187,35 @@ a:active{
     .label {
       @extend .visually-hidden;
     }
+  }
+}
+
+// TITLED
+
+*[data-title]:hover {
+  position: relative;
+  &:after {
+    content: attr(data-title);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    z-index: 1400;
+    width: auto;
+    max-width: 12rem;
+    padding: 0 0.5rem;
+    background: rgba($base-color, 0.8);
+    border-radius: $global-radius;
+    margin-top: 0.25rem;
+    @include transform(translate(-50%, 0));
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    color: #fff;
+    @extend .truncated;
+    text-align: center;
+    @extend .antialiased;
+    font-family: $base-font-family;
+    font-weight: $base-font-regular;
+    font-style: $base-font-style;
+    text-transform: uppercase;
   }
 }

@@ -48,15 +48,10 @@
       <header id="site-header" role="banner">
         <h1 id="site-title">Collecticons</h1>
         <p id="site-description">An evergroing collection of crisp icons.</p>
-        <p id="site-actions"><a href="#" title="Get the icons!" class="button-download"><span>Download</span></a></p>
+        <p id="site-actions"><a href="collecticons.zip" title="Get the icons!" class="button-download"><span>Download</span></a></p>
       </header>
-      <main id="site-body">
-        <section class="stripe showcase">
-          <h2 class="stripe-title">Showcase</h2>
-          <ul class="showcase-list">
-            <li><a href="#"><span class="label">Nome</span><span class="collecticon"></span></a></li>
-          </ul>
-        </section>
+      <main id="site-body" data-hook="showcase-holder">
+        <!-- Showcase section via javascript -->
         <section class="stripe usage">
           <h2 class="stripe-title">Usage</h2>
           <div class="stripe-content prose">
@@ -70,6 +65,17 @@
         </section>
       </main>
     </div>
+
+    <script id="showcase-section" type="text/template" class="template">
+      <section class="stripe showcase">
+        <h2 class="stripe-title">Showcase</h2>
+        <ul class="showcase-list">
+          <% icons.forEach(function(i) { %>
+            <li><a href="#" data-hook="icon-link" data-title="<%= i.icon.replace('collecticon-', '') %>"><span class="label"><%= i.icon %></span><span class="collecticon <%= i.icon %>"></span></a></li>
+          <% }) %>
+        </ul>
+      </section>
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
