@@ -67,7 +67,7 @@ gulp.task('serve', ['vendorScripts', 'javascript', 'styles', 'fonts'], function 
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('build', ['javascript'], function () {
+gulp.task('build', ['vendorScripts', 'javascript'], function () {
   gulp.start(['html', 'images', 'fonts', 'extras'], function () {
     return gulp.src('dist/**/*')
       .pipe($.size({title: 'build', gzip: true}))
@@ -166,7 +166,7 @@ gulp.task('vendorScripts', function() {
     debug: true,
     require: pkg.dependencies ? Object.keys(pkg.dependencies) : []
   });
-  vb.bundle()
+  return vb.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('vendor.js'))
     .pipe(buffer())
