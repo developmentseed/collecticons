@@ -1,6 +1,6 @@
 {
   "name": "collecticons",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "An evergrowing collection of crisp icons.",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/developmentseed/collecticons/issues"
   },
-  "homepage": "https://github.com/developmentseed/collecticons",
+  "homepage": "http://collecticons.io",
   "scripts": {
     "serve": "gulp serve",
     "build": "gulp",
