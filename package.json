@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/developmentseed/collecticons/issues"
   },
-  "homepage": "http://collecticons.io",
+  "homepage": "https://collecticons.io",
   "scripts": {
     "serve": "gulp serve",
     "build": "gulp",
