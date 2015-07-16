@@ -1,8 +1,8 @@
-[![collecticons-banner](https://cloud.githubusercontent.com/assets/1090606/8695447/fdef92fa-2adc-11e5-8979-b61bd96d24ca.png)](http://collecticons.io)
+[![collecticons-banner](https://cloud.githubusercontent.com/assets/1090606/8695447/fdef92fa-2adc-11e5-8979-b61bd96d24ca.png)](https://collecticons.io)
 
 # Collecticons
 
-This repo contains the source code for the [Collecticons icon library website](http://collecticons.io).
+This repo contains the source code for the [Collecticons icon library website](https://collecticons.io).
 If your looking for the actual icon library check [here](https://github.com/developmentseed/collecticons-lib). There's also a webfont generation util for advanced users which is available [here](https://github.com/developmentseed/collecticons-processor).
 
 
