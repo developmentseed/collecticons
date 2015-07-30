@@ -1,6 +1,6 @@
 var $ = require('jquery');
 var _ = require('lodash');
-var version = require('../../../collecticons-lib/version.json');
+var version = require('../../../collecticons-lib/bower.json');
 
 $(function () {
   var template = _.template($('#page-template').html());

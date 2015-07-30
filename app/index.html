@@ -69,15 +69,33 @@
               <li><p><a href="/collecticons.zip" title="Get the icons!">Download Collecticons</a> and copy the <code>font</code> folder and <code>icons.css</code> file into your project. This example assumes you've copied these into the root directory.</p></li>
               <li>
                 <p>Link to the <code>icons.css</code> stylesheet in the <code>&lt;head&gt;</code> of your <code>&lt;html&gt;</code> page:</p>
-                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/icons.css"</span><span class="nt">&gt;</span></code></pre></div>
+                <div class="highlight"><pre><code>&lt;link rel="stylesheet" href="/icons.css"&gt;</code></pre></div>
               </li>
               <li>
                 <p>Simply use an icon in your HTML page:</p>
-                <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"collecticon collecticon-house"</span><span class="nt">&gt;&lt;/span&gt;</span></code></pre></div>
+                <div class="highlight"><pre><code>&lt;span class="collecticon collecticon-house"&gt;&lt;/span&gt;</code></pre></div>
               </li>
             </ol>
             <p>If you choose to separate the font files from the CSS files, be sure to update the links in <code>icons.css</code>.</p>
             <p>Collecticons look best in sizes that are multiples of <strong>16px</strong>.</p>
+
+            <h3>Bower</h3>
+            <p>You can also use collecticons with <a href="http://bower.io/" title="View Bower website">Bower</a>.</p>
+            <ol>
+              <li><p>Create a <code>bower.json</code> file if you don't have one (use <code>bower init</code>)</p></li>
+              <li>
+                <p>Install collecticons. The icons styles will be downloaded to bower_components/collecticons.</p>
+                <div class="highlight"><pre><code>bower install --save collecticons</code></pre></div>
+              </li>
+              <li>
+                <p>Link to the <code>icons.css</code> stylesheet in the <code>&lt;head&gt;</code> of your <code>&lt;html&gt;</code> page:</p>
+                <div class="highlight"><pre><code>&lt;link rel="stylesheet" href="bower_components/collecticons/collecticons/styles/icons.css"&gt;</code></pre></div>
+              </li>
+              <li>
+                <p>Simply use an icon in your HTML page:</p>
+                <div class="highlight"><pre><code>&lt;span class="collecticon collecticon-house"&gt;&lt;/span&gt;</code></pre></div>
+              </li>
+            </ol>
 
             <h3>Advanced usage</h3>
             <p>If you're only interested in a webfont with a smaller set of icons you can manually generate it using our <code>collecticons</code> command line util.</p>
@@ -88,7 +106,7 @@
         <section class="stripe about">
           <h2 class="stripe-title">About</h2>
           <div class="stripe-content prose">
-          <p>We at <a href="https://developmentseed.org" title="Visit Development Seed website">Development Seed</a> use iconography in a lot of projects. Some of the icons were designed/built on top of libraries like <a href="https://github.com/Keyamoon/IcoMoon-Free" title="View icoMoon webfont">icoMoon by Keyamoon</a> and others were made in house. This evergrowing collection is a set of the icons we've been using so far and are now available for free under the <a href="https://github.com/developmentseed/collecticons/blob/master/LICENSE" title="View license">The MIT License</a>.
+          <p>We at <a href="https://developmentseed.org" title="Visit Development Seed website">Development Seed</a> use iconography in a lot of projects. Some of the icons were designed/built on top of libraries like <a href="https://github.com/Keyamoon/IcoMoon-Free" title="View icoMoon webfont">icoMoon by Keyamoon</a> and others were made in house. This evergrowing collection is a set of the icons we've been using so far and are now available for free under the <a href="https://github.com/developmentseed/collecticons/blob/master/LICENSE" title="View license">The MIT License</a> and the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</a>.
           <p>If you feel like contributing to this library checkout our <a href="https://github.com/developmentseed/collecticons-lib" title="View collecticons icon library">collecticons library</a> repo and submit a pull request.</p>
           </div>
         </section>
