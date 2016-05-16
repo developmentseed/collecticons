@@ -25,6 +25,8 @@ var rename = require('gulp-rename');
 // The package.json
 var pkg;
 
+var prodBuild = false;
+
 ////////////////////////////////////////////////////////////////////////////////
 //------------------------- Helper functions ---------------------------------//
 //----------------------------------------------------------------------------//
@@ -39,6 +41,7 @@ readPackage();
 //----------------------------------------------------------------------------//
 
 gulp.task('default', ['clean'], function () {
+  prodBuild = true;
   gulp.start('build');
 });
 
@@ -138,6 +141,9 @@ gulp.task('javascript', ['config'], function() {
           message: e.message
         });
           console.log('Sass error:', e);
+          if (prodBuild) {
+            process.exit(1);
+          }
           // Allows the watch to continue.
           this.emit('end');
       })
@@ -189,6 +195,9 @@ gulp.task('styles', function () {
         message: e.message
       });
       console.log('Sass error:', e.toString());
+      if (prodBuild) {
+        process.exit(1);
+      }
       // Allows the watch to continue.
       this.emit('end');
     }))
