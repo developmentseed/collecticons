@@ -254,12 +254,25 @@ a:active{
     text-align: center;
     text-decoration: none;
     cursor: help;
+
     &:hover {
       opacity: 1;
     }
+
+    &:active {
+      @include transform(none);
+    }
+
     .label {
       @extend .visually-hidden;
     }
+
+    * {
+      vertical-align: top;
+      display: inline-block;
+      line-height: inherit;
+    }
+
   }
   @include media(small-up) {
     li {
@@ -288,10 +301,13 @@ a:active{
   font-size: 0.875rem;
   line-height: 1.25rem;
   @include animation(fade-in 2s ease 0s 1);
+  
   .collecticon {
     font-weight: normal;
-    vertical-align: middle;
+    vertical-align: top;
     font-size: 1rem;
+    line-height: inherit;
+    display: inline-block;
     span {
       @extend .visually-hidden;
     }
