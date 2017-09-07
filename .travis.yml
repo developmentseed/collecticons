@@ -1,23 +1,34 @@
 language: node_js
 node_js:
-  - "0.12"
+  - '0.12'
 
 env:
   global:
-  - GH_REF=github.com/developmentseed/collecticons.git
+  - CXX=g++-4.8
   - DEPLOY_BRANCH=master
-  - secure: "i51uwJYUIQYyY9+33U1i25WXG22S48jRW2egpvBXZFQVn9yhe6hhS9bHAr8qPTGJS70UAQETwsJTICKzL4hUw1VGsyrXr7lHs1ryDT5k5R4V0i1Ty8N57zSOl96+K+gYDiJvjRsghu9KpNCsq4GRE0aWrVW+ior7tRQxPIgE65aS4/Lmx0e5iKNLAyuEoYFZhPCJ76AepquEqVRJV5KrmAdRozhrMr27vvRgVGyefRoGmZPjJwJ2hhUFPIzBHpiZI2+rPjMwTe5OLt8e2d7fS6W1AsIld+eK1EiS6ERFAe87xlG/G42BXNlhyZwEiTJlQLlK3lsPvTIH0Idc84qRFKLD1Mwyvef9vUBvdZ9llh392JApKI6waTUS2dtNsvLXbzatnwX+Ds48NR6gnmb/Hi2Evowk6jeBtdkIfkwEeWGA80Ou0DKoZFeyxHg1XKE9Ap+YkXizBY2mU4PZNTsnF+/zIkc99Au2S+JIVNfar+5OvhcagMiVc5FYa55Ql+me8+4ezZk5c6wpA7FzWM6dmMvGpJQqvHOAUIsSOjQCbT2btR6LqAgUAxo2KHm/WCzPRLsR6riMzTb/xRaPolo53hOlvubwmcaOI5Xma1aqI2m66lTK3VKq/Q2bJJ2lzz7zF8azCvUpeUGatp1wvWnRJtkc97fSSM3sti/ia74RDcM="
-
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
 cache:
+  apt: true
+  yarn: true
   directories:
-    - node_modules
+  - node_modules
 
 before_install:
 - chmod +x ./.build_scripts/deploy.sh
+
 
 script:
 - gulp collecticons
 - gulp
 
-after_success:
-- ./.build_scripts/deploy.sh
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ".build_scripts/deploy.sh"
+  on:
+branch: "${DEPLOY_BRANCH}"
