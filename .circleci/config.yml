@@ -17,6 +17,8 @@ jobs:
     steps:
       - checkout
 
+      - run: git submodule sync --recursive && git submodule update --recursive --init
+
       # Download and cache dependencies
       - restore_cache:
           keys:
