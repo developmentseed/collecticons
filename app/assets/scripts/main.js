@@ -1,16 +1,14 @@
-var $ = require('jquery');
-var _ = require('lodash');
-var version = require('../../../collecticons-lib/bower.json');
+import _template from 'lodash.template';
 
-$(function () {
-  var template = _.template($('#page-template').html());
-  var $container = $('#site-canvas');
-  // Render icons from catalog.
-  $.get('catalog.json')
-    .success(function (res) {
-      res.version = version.version;
-      $container.prepend(template(res));
-      // Prevent clicks on icons.
-      $('[data-hook="icon-link"]').click(function (e) {e.preventDefault();});
-    });
-});
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+const version = require('../../../collecticons-lib/bower.json');
+
+const template = _template(document.querySelector('#page-template').innerHTML);
+
+fetch('catalog.json')
+  .then(data => data.json())
+  .then(data => {
+    data.version = version.version;
+    document.querySelector('#site-canvas').innerHTML = template(data);
+  });
