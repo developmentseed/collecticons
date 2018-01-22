@@ -5,26 +5,34 @@
 This repo contains the source code for the [Collecticons icon library website](https://collecticons.io).
 If your looking for the actual icon library check [here](https://github.com/developmentseed/collecticons-lib). There's also a webfont generation util for advanced users which is available [here](https://github.com/developmentseed/collecticons-processor).
 
-
-## Development environment
+### Install Project Dependencies
 To set up the development environment for this website, you'll need to install the following on your system:
 
-- [Node and npm](http://nodejs.org/)
-- Gulp ( $ npm install -g gulp )
+- [Node](http://nodejs.org/) v8 (To manage multiple node versions we recommend [nvm](https://github.com/creationix/nvm))
+- [Yarn](https://yarnpkg.com/) Package manager
 
-After these basic requirements are met, run the following commands in the website's folder:
+### Install Application Dependencies
+
+If you use [`nvm`](https://github.com/creationix/nvm), activate the desired Node version:
+
 ```
-$ npm install
+nvm install
+```
+
+Install Node modules:
+
+```
+yarn install
 ```
 
 ### Getting started
 ```
-$ gulp collecticons
+$ yarn collecticons
 ```
 Builds the icon font. Only needed when there are changes to the icon library.
 
 ```
-$ gulp serve
+$ yarn serve
 ```
 Compiles the website and launches the server making it available at `http://localhost:3000/`
 

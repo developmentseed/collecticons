@@ -57,7 +57,7 @@
           <h2 class="stripe-title">Showcase</h2>
           <ul class="showcase-list">
             <% icons.forEach(function(i) { %>
-              <li><a href="#" data-hook="icon-link" data-title="<%= i.icon.replace('collecticon-', '') %>"><span class="label"><%= i.icon %></span><span class="collecticon <%= i.icon %>"></span></a></li>
+              <li><a data-hook="icon-link" data-title="<%= i.icon.replace('collecticon-', '') %>"><span class="label"><%= i.icon %></span><span class="collecticon <%= i.icon %>"></span></a></li>
             <% }) %>
           </ul>
         </section>
