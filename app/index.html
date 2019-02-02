@@ -66,7 +66,7 @@
           <div class="stripe-content prose">
             <h3>Adding to your project as a webfont</h3>
             <ol>
-              <li><p><a href="/collecticons.zip" title="Get the icons!">Download Collecticons</a> and copy the <code>font</code> folder and <code>icons.css</code> file into your project. This example assumes you've copied these into the root directory.</p></li>
+              <li><p><a href="/collecticons.zip" title="Get the icons!">Download Collecticons</a> and copy <code>icons.css</code> file into your project. This example assumes you've copied these into the root directory.</p></li>
               <li>
                 <p>Link to the <code>icons.css</code> stylesheet in the <code>&lt;head&gt;</code> of your <code>&lt;html&gt;</code> page:</p>
                 <div class="highlight"><pre><code>&lt;link rel="stylesheet" href="/icons.css"&gt;</code></pre></div>
@@ -79,17 +79,16 @@
             <p>If you choose to separate the font files from the CSS files, be sure to update the links in <code>icons.css</code>.</p>
             <p>Collecticons look best in sizes that are multiples of <strong>16px</strong>.</p>
 
-            <h3>Bower</h3>
-            <p>You can also use collecticons with <a href="http://bower.io/" title="View Bower website">Bower</a>.</p>
+            <h3>NPM</h3>
+            <p>You can also use collecticons with <a href="https://www.npmjs.com/" title="View NPM website">NPM</a>.</p>
             <ol>
-              <li><p>Create a <code>bower.json</code> file if you don't have one (use <code>bower init</code>)</p></li>
               <li>
-                <p>Install collecticons. The icons styles will be downloaded to bower_components/collecticons.</p>
-                <div class="highlight"><pre><code>bower install --save collecticons</code></pre></div>
+                <p>Install collecticons.</p>
+                <div class="highlight"><pre><code>npm install --save collecticons-lib</code></pre></div>
               </li>
               <li>
                 <p>Link to the <code>icons.css</code> stylesheet in the <code>&lt;head&gt;</code> of your <code>&lt;html&gt;</code> page:</p>
-                <div class="highlight"><pre><code>&lt;link rel="stylesheet" href="bower_components/collecticons/collecticons/styles/icons.css"&gt;</code></pre></div>
+                <div class="highlight"><pre><code>&lt;link rel="stylesheet" href="node_modules/collecticons-lib/dist/styles/icons.css"&gt;</code></pre></div>
               </li>
               <li>
                 <p>Simply use an icon in your HTML page:</p>

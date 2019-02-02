@@ -39,7 +39,7 @@
 
 app/assets/scripts/config/local.js
 app/assets/fonts/
-app/assets/styles/icons.css
+app/assets/styles/_icons.scss
 app/catalog.json
 app/collecticons.zip
 
