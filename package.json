@@ -90,7 +90,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
-    "collecticons-lib": "^2.1.0",
+    "collecticons-lib": "^2.2.0",
     "es6-promise": "^4.2.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash.template": "^4.4.0"
