@@ -1,6 +1,6 @@
 {
   "name": "collecticons",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "An evergrowing collection of crisp icons.",
   "repository": {
     "type": "git",
@@ -90,6 +90,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "clipboard": "^2.0.6",
     "collecticons-lib": "^3.0.0",
     "es6-promise": "^4.2.2",
     "isomorphic-fetch": "^2.2.1",
