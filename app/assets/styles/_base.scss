@@ -273,6 +273,11 @@ a:active{
       line-height: inherit;
     }
 
+    ::after {
+      overflow: visible;
+      max-width: 30rem;
+    }
+
   }
   @include media(small-up) {
     li {
