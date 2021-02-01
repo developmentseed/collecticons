@@ -1,0 +1,28 @@
+______               _                                  _     _____               _
+|  _  \             | |                                | |   /  ___|             | |
+| | | |_____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_  \ `--.  ___  ___  __| |
+| | | / _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  `--. \/ _ \/ _ \/ _` |
+| |/ /  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  /\__/ /  __/  __/ (_| |
+|___/ \___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__| \____/ \___|\___|\__,_|
+                            | |
+                            |_|
+===================================================================================
+
+/* TEAM */
+
+Developer: Daniel da Silva
+Site: http://developmentseed.org
+Twitter: @danielfdsilva
+Location: Lisbon, Portugal
+
+UI/UX Designer: Ricardo Mestre
+Site: http://developmentseed.org
+Twitter: @ricardoduplos
+Location: Lisbon, Portugal
+
+/* SITE */
+
+Last update: 15-07-2015
+Standards: HTML5, CSS3, RWD
+Components: jQuery, collecticons-processor
+Software: Sublime Text, Adobe Illustrator CC, GitHub (Mac)
