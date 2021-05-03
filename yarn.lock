@@ -1631,10 +1631,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-collecticons-lib@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/collecticons-lib/-/collecticons-lib-4.0.0.tgz#558d59c7bed16680bd2b8773555450e450a7a265"
-  integrity sha512-WnVGblZFOSFlTLTc+77lwaBaiDtxyF290mr4tkCqFHV+mU9QEbPpAgPuV/KpqYvc4ccvDTTgQQPyQNrnyBwpsg==
+collecticons-lib@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/collecticons-lib/-/collecticons-lib-4.1.0.tgz#f976a76d8e8d9b49c4e87a030e0a3706806597cd"
+  integrity sha512-Ta4NoTGI+6T2cIAqku6mfmlaWMhTU7YT/ORK2w5sVT/S+eafuJc9NhEB+NjpRwFEtRDoHrvLvWTSfSEg/GUBoA==
 
 "collecticons-processor@https://github.com/developmentseed/collecticons-processor#v4.0.0":
   version "4.0.0"
