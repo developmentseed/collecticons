@@ -7,7 +7,7 @@
     "serve": "parcel src/index.html --dist-dir public --cache-dir .parcel-cache -p 9000",
     "build": "parcel build src/index.html --dist-dir public --cache-dir .parcel-cache",
     "ts-check": "tsc --noEmit",
-    "clean": "rm -rf .parcel_cache public",
+    "clean": "rm -rf .parcel-cache public",
     "lint": "eslint ./src --no-error-on-unmatched-pattern"
   },
   "dependencies": {

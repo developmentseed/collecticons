@@ -1,23 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Box,
+  BoxProps,
   Button,
   Container,
   Heading,
-  HeadingProps,
   Link,
+  LinkProps,
   ListItem,
   OrderedList,
   Text,
   Tooltip,
   UnorderedList,
   VisuallyHidden,
-  keyframes,
-  useBreakpointValue
+  keyframes
 } from '@chakra-ui/react';
 import Clipboard from 'clipboard';
-
 import * as collecticons from '@devseed-ui/collecticons-chakra';
+
+// @ts-expect-error import image as url
+import bgImg from 'url:../media/main-bg.svg';
+import { StripeTitle } from './stripe-title';
 
 const mainBg = keyframes`  
   from {
@@ -41,35 +44,24 @@ const iconNames = Object.keys(collecticons).filter((k) =>
   k.startsWith('Collecticon')
 );
 
-// @ts-expect-error import image as url
-import bgImg from 'url:../media/main-bg.svg';
+const HighlightBox = (props: BoxProps) => (
+  <Box
+    p={{ base: '1rem', md: '2rem' }}
+    bg='rgba(255,255,255,0.16)'
+    overflowX='auto'
+    {...props}
+  />
+);
 
-function StripeTitle(props: HeadingProps) {
-  return (
-    <Heading
-      as='h2'
-      fontSize={['lg', 'xl', '2xl', '3xl']}
-      lineHeight='calc(0.5rem + 1em)'
-      textAlign='center'
-      textTransform='uppercase'
-      position='relative'
-      pt='1%'
-      mb='1.5rem'
-      _before={{
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: '50%',
-        transform: 'translate(-50%, 0)',
-        width: '8%',
-        height: '8%',
-        maxW: '5rem',
-        background: '#fff'
-      }}
-      {...props}
-    />
-  );
-}
+const TextLink = (props: LinkProps) => (
+  <Link
+    textDecoration='underline'
+    _hover={{
+      opacity: 0.64
+    }}
+    {...props}
+  />
+);
 
 export function App() {
   return (
@@ -197,46 +189,75 @@ export function App() {
         </Box>
         <Box as='section' mb={{ base: '3rem', md: '4rem' }}>
           <StripeTitle>Usage</StripeTitle>
-          <Container maxW='container.md'>
-            <Heading as='h3'>Downloading the SVG&apos;s</Heading>
-            <OrderedList>
-              <ListItem>
-                <p>
-                  <Link href='/collecticons.zip' title='Get the icons!'>
-                    Download Collecticons
-                  </Link>
-                  .
-                </p>
+          <Container maxW='container.md' fontSize={{ md: '1.25rem' }}>
+            <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
+              Downloading the SVG&apos;s
+            </Heading>
+            <OrderedList pl={4} mb={8}>
+              <ListItem mb={4}>
+                <TextLink href='/collecticons.zip' title='Get the icons!'>
+                  Download collecticons
+                </TextLink>
+                .
               </ListItem>
-              <ListItem>
-                <p>Done! ✨</p>
+              <ListItem mb={4}>Done! ✨</ListItem>
+            </OrderedList>
+
+            <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
+              Collecticons for React
+            </Heading>
+            <Text mb={4}>
+              You can also use collecticons with{' '}
+              <TextLink href='https://www.npmjs.com/' title='View NPM website'>
+                NPM
+              </TextLink>
+              .
+            </Text>
+            <OrderedList pl={4} mb={8}>
+              <ListItem mb={4}>
+                <p>Install collecticons.</p>
+                <HighlightBox>
+                  <pre>
+                    <code>yarn add @devseed-ui/collecticons-react</code>
+                  </pre>
+                </HighlightBox>
+              </ListItem>
+              <ListItem mb={4}>
+                <p>Simply use an icon in your app.</p>
+                <HighlightBox>
+                  <pre>
+                    <code>&lt;CollecticonBrandDevelopmentSeed /&gt;</code>
+                  </pre>
+                </HighlightBox>
               </ListItem>
             </OrderedList>
 
-            <Heading as='h3'>Collecticons for React</Heading>
-            <p>
-              You can also use collecticons with{' '}
-              <Link href='https://www.npmjs.com/' title='View NPM website'>
-                NPM
-              </Link>
-              .
-            </p>
-            <OrderedList>
-              <ListItem>
+            <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
+              Collecticons for React (Chakra UI specific)
+            </Heading>
+            <Text mb={4}>
+              Collecticons is also available specifically for{' '}
+              <TextLink href='https://v2.chakra-ui.com/'>Chakra UI</TextLink>
+              making it possible to use with the Chakra styled system.
+            </Text>
+            <OrderedList pl={4} mb={8}>
+              <ListItem mb={4}>
                 <p>Install collecticons.</p>
-                <div>
+                <HighlightBox>
                   <pre>
-                    <code>npm install --save VAAAAA</code>
+                    <code>yarn add @devseed-ui/collecticons-chakra</code>
                   </pre>
-                </div>
+                </HighlightBox>
               </ListItem>
-              <ListItem>
-                <p>Simply use an icon in your app:</p>
-                <div>
+              <ListItem mb={4}>
+                <p>Simply use an icon in your app.</p>
+                <HighlightBox>
                   <pre>
-                    <code>&lt;Area /&gt;</code>
+                    <code>
+                      {`<CollecticonBrandDevelopmentSeed size={{ base: '4', lg: '8' }} />`}
+                    </code>
                   </pre>
-                </div>
+                </HighlightBox>
               </ListItem>
             </OrderedList>
           </Container>
@@ -244,48 +265,48 @@ export function App() {
 
         <Box as='section' mb={{ base: '3rem', md: '4rem' }}>
           <StripeTitle>About</StripeTitle>
-          <Container maxW='container.md'>
-            <p>
+          <Container maxW='container.md' fontSize={{ md: '1.25rem' }}>
+            <Text mb={4}>
               We at{' '}
-              <Link
+              <TextLink
                 href='https://developmentseed.org'
                 title='Visit Development Seed website'
               >
                 Development Seed
-              </Link>{' '}
+              </TextLink>{' '}
               use iconography in a lot of projects. Some of the icons were
               designed/built on top of libraries like{' '}
-              <Link
+              <TextLink
                 href='https://github.com/Keyamoon/IcoMoon-Free'
                 title='View icoMoon webfont'
               >
                 icoMoon by Keyamoon
-              </Link>{' '}
+              </TextLink>{' '}
               and others were made in house. This evergrowing collection is a
               set of the icons we&apos;ve been using so far and are now
               available for free under the{' '}
-              <Link
+              <TextLink
                 href='https://github.com/developmentseed/collecticons/blob/master/LICENSE'
                 title='View license'
               >
                 The MIT License
-              </Link>{' '}
+              </TextLink>{' '}
               and the{' '}
-              <Link href='https://creativecommons.org/licenses/by/4.0/'>
+              <TextLink href='https://creativecommons.org/licenses/by/4.0/'>
                 Creative Commons Attribution License 4.0
-              </Link>
+              </TextLink>
               .
-            </p>
-            <p>
+            </Text>
+            <Text mb={4}>
               If you feel like contributing to this library checkout our{' '}
-              <Link
+              <TextLink
                 href='https://github.com/developmentseed/collecticons-lib'
                 title='View collecticons icon library'
               >
                 collecticons library
-              </Link>{' '}
+              </TextLink>{' '}
               repo and submit a pull request.
-            </p>
+            </Text>
           </Container>
         </Box>
         <Box
@@ -310,7 +331,8 @@ export function App() {
               title='Visit Development Seed website'
             >
               Development Seed
-            </Link>.
+            </Link>
+            .
           </Text>
         </Box>
       </Container>
@@ -354,8 +376,6 @@ function CollecticonItem({
       }
     };
   }, []);
-
-  const size = useBreakpointValue({ base: '16px', md: '32px' });
 
   return (
     <Tooltip hasArrow placement='top' label={showCopiedMsg ? 'Copied!' : name}>
