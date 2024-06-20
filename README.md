@@ -61,13 +61,6 @@ collecticon-circle-xmark.svg
 
 Some icons are better expressed at smaller sizes, especially when they are presented alongside text. This means that their design doesn't need to occupy the whole grid. Try to use 80% or less of the grid space instead. Example: `sort`.
 
-## Versions
-Collecticons operates similarly to [Semver](http://semver.org/) with the following version convention:
-
-- Major: Breaking changes — removed icons, icon redesigns, name changes
-- Minor: Non-breaking changes — new icons, minor icon changes
-- Patch: Unnoticeable tweaks — slight visual changes, other updates
-
 ## Add Collecticons to your project
 
 You can download the collecticons svgs to use directly in your project, or use one of the package versions.
@@ -83,3 +76,19 @@ yarn add @devseed-ui/collecticons-react
 ```
 yarn add @devseed-ui/collecticons-chakra
 ```
+
+## Versioning
+Collecticons operates similarly to [Semver](http://semver.org/) with the following version convention:
+
+- Major: Breaking changes — removed icons, icon redesigns, name changes
+- Minor: Non-breaking changes — new icons, minor icon changes
+- Patch: Unnoticeable tweaks — slight visual changes, other updates
+
+## Deployment
+
+The deployment of a new package is done automatically by Github Actions whenever a new release is made. Nevertheless there is some manual work to be done:
+
+- Once the packages are ready to be deployed update the versions using `yarn versionup`.
+- Add an entry to the CHANGELOG.md file with a breakdown of the changes per package.
+- Commit the changes and push to the repository.
+- Create a new release on Github with the same version as the one in the package.json file adding the changelog entry to the description.
