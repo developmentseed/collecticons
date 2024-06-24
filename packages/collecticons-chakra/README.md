@@ -2,8 +2,6 @@
 
 # Collecticons for Chakra UI
 
-[Showcase](https://devseed.com/collecticons-chakra/)
-
 This modules allows you to use [collecticons](http://collecticons.io/) svg icons with the [Chakra UI Library](https://chakra-ui.com/).
 
 ```bash
@@ -50,8 +48,7 @@ createCollecticon((props) => {}, iconSvgProps);
 //}
 ```
 
-The SVG wrapper is added automatically by Chakra, so only the icon path should be returned.  
-For accessibility purposes, a `<title>` should be added if it exists.
+The SVG wrapper is added automatically by Chakra, so only the icon path should be returned.
 
 If there's the need to pass additional props to the SVG, they can be passed as the second argument to `createCollecticon`. As an example, if the icon was designed with a `viewBox` different from `0 0 16 16` this prop should be passed on creation.
 
@@ -67,10 +64,7 @@ The following SVG icon:
 Would be converted to a Collecticon as:
 ```jsx
 const CollecticonSquare = createCollecticon((props) => (
-  <>
-    {props.title && (<title>{props.title}</title>)}
-    <rect x="2" y="2" width="12" height="12" fill='currentColor' />
-  </>
+  <rect x="2" y="2" width="12" height="12" fill='currentColor' />
 ));
 
 ```

@@ -10,6 +10,7 @@ If you feel like contributing to this library checkout the guidelines below:
 
 **For development instructions, see [DEVELOPMENT.md](DEVELOPMENT.md).**
 
+- Icons are to be placed in the `icons` directory. The build scripts will automatically generate the necessary files for the different packages.
 - The icons in this package are designed on a 16px grid and look best at sizes that are multiples of that value (E.g. 16px, 32px, 48px, etc).
 - Download the [template](collecticons-template.svg) file. You'll see a transparent 16px square (named `icon-bound`) being used as a wrapper. This should not be deleted and your artwork must be contained within its limits.
 - The icons should look minimalist, geometric yet functional. Use a 2px stroke for general lines and 1px for details. Round corners should be avoided if their only purpose is decoration.
@@ -61,22 +62,6 @@ collecticon-circle-xmark.svg
 
 Some icons are better expressed at smaller sizes, especially when they are presented alongside text. This means that their design doesn't need to occupy the whole grid. Try to use 80% or less of the grid space instead. Example: `sort`.
 
-## Add Collecticons to your project
-
-You can download the collecticons svgs to use directly in your project, or use one of the package versions.
-
-### React
-
-```
-yarn add @devseed-ui/collecticons-react
-```
-
-### React (Chakra UI specific)
-
-```
-yarn add @devseed-ui/collecticons-chakra
-```
-
 ## Versioning
 Collecticons operates similarly to [Semver](http://semver.org/) with the following version convention:
 
@@ -92,3 +77,10 @@ The deployment of a new package is done automatically by Github Actions whenever
 - Add an entry to the CHANGELOG.md file with a breakdown of the changes per package.
 - Commit the changes and push to the repository.
 - Create a new release on Github with the same version as the one in the package.json file adding the changelog entry to the description.
+
+## Using Collecticons in your project
+
+You can download the collecticons svgs to use directly in your project, or use one of the package versions. Check the relevant README file for more information.
+
+- [@devseed-ui/collecticons-chakra](./packages/collecticons-chakra)
+- [@devseed-ui/collecticons-react](./packages/collecticons-react)
