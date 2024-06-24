@@ -48,6 +48,7 @@ export function createCollecticon(
     };
     return (
       <Icon {...iconProps} ref={ref}>
+        {title && (<title>{title}</title>)}
         {creatorFn(iconProps)}
       </Icon>
     );

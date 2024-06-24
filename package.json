@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "icons:react": "./node_modules/@svgr/cli/bin/svgr --out-dir packages/collecticons-react/lib/icons --filename-case camel --typescript --title-prop --ref --svg-props fill=currentColor --svg-props viewBox='0 0 16 16' -- ./icons",
-    "icons:chakra": "./node_modules/@svgr/cli/bin/svgr --out-dir packages/collecticons-chakra/lib/icons --filename-case camel --ext tsx --template chakra-svco-template.js -- ./icons",
+    "icons:react": "./node_modules/@svgr/cli/bin/svgr --out-dir packages/collecticons-react/lib/icons --filename-case camel --ext tsx --template svco-template.js -- ./icons",
+    "icons:chakra": "./node_modules/@svgr/cli/bin/svgr --out-dir packages/collecticons-chakra/lib/icons --filename-case camel --ext tsx --template svco-template.js -- ./icons",
     "icons:zip": "zip showcase/static/collecticons.zip icons/*",
     "icons": "yarn icons:zip && yarn icons:react && yarn icons:chakra",
     "build": "lerna run build",
