@@ -34,6 +34,8 @@ By design, Collections only have one color which is then controlled via props, s
 A collecticon can be created using the function `createCollecticon` which should return a React Component and has the following signature:
 
 ```
+import { createCollecticon } from '@devseed-ui/collecticons-chakra';
+
 createCollecticon((props) => {}, iconSvgProps);
 
 // props = {
