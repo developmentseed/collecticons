@@ -233,11 +233,11 @@ export function App() {
             </OrderedList>
 
             <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
-              Collecticons for React (Chakra UI specific)
+              Collecticons (Chakra UI specific)
             </Heading>
             <Text mb={4}>
               Collecticons is also available specifically for{' '}
-              <TextLink href='https://v2.chakra-ui.com/'>Chakra UI</TextLink>
+              <TextLink href='https://chakra-ui.com/'>Chakra UI</TextLink>{' '}
               making it possible to use with the Chakra styled system.
             </Text>
             <OrderedList pl={4} mb={8}>
