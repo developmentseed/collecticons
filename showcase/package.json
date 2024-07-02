@@ -1,6 +1,6 @@
 {
   "name": "@devseed-ui/collecticons-showcase",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Showcase site for Collecticons",
   "private": true,
   "scripts": {
