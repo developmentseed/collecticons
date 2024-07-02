@@ -1,0 +1,40 @@
+{
+  "name": "@devseed-ui/collecticons-showcase",
+  "version": "3.0.0",
+  "description": "Showcase site for Collecticons",
+  "private": true,
+  "scripts": {
+    "serve": "parcel src/index.html --dist-dir public --cache-dir .parcel-cache -p 9000",
+    "build": "parcel build src/index.html --dist-dir public --cache-dir .parcel-cache",
+    "ts-check": "tsc --noEmit",
+    "clean": "rm -rf .parcel-cache public",
+    "lint": "eslint ./src --no-error-on-unmatched-pattern"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@devseed-ui/collecticons-chakra": "workspace:*",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "framer-motion": "^10.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@parcel/config-default": "^2.12.0",
+    "@parcel/core": "^2.12.0",
+    "@parcel/transformer-typescript-tsc": "^2.12.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "clipboard": "^2.0.11",
+    "framer-motion": "^10.18.0",
+    "parcel": "^2.12.0",
+    "prettier": "^3.3.2",
+    "process": "^0.11.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
+  }
+}

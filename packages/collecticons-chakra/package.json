@@ -1,0 +1,57 @@
+{
+  "name": "@devseed-ui/collecticons-chakra",
+  "version": "3.0.0",
+  "description": "devseed UI Kit Collecticons for Chakra",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs",
+    "watch": "rollup -c ../../rollup.config.mjs -w",
+    "clean": "rm -rf ./dist ./lib/icons",
+    "ts-check": "tsc --noEmit",
+    "lint": "eslint ./lib --no-error-on-unmatched-pattern"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developmentseed/collecticons.git"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "framer-motion": "^10.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.11"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "front-end",
+    "chakra",
+    "react",
+    "icons",
+    "collecticons"
+  ]
+}
