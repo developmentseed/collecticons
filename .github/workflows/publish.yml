@@ -18,7 +18,13 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
 
-      - run: yarn
-      - run: yarn publish -y
+      - name: Install packages
+        run: yarn
+        
+      - name: Build the packages
+        run: yarn build --no-private
+        
+      - name: Publishing to NPM 🚀
+        run: yarn publish -y
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
