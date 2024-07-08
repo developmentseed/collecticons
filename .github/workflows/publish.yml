@@ -20,6 +20,9 @@ jobs:
 
       - name: Install packages
         run: yarn
+
+      - name: Creat JSX icons from SVG
+        run: yarn icons
         
       - name: Build the packages
         run: yarn build --no-private
