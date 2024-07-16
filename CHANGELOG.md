@@ -9,3 +9,7 @@ Fix incorrect svg paths for `calendar-minus.svg`, `magnifier-minus.svg`, `magnif
 
 ## 3.0.2
 Fix deployment script that was not building the packages ([#22](https://github.com/developmentseed/collecticons/issues/22))
+
+## 3.0.3
+- Remove icon added by mistake `collection-layers.svg` (not a real collecticon)
+- Fix showcase build script
