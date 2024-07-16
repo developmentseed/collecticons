@@ -4,8 +4,9 @@
   "description": "Showcase site for Collecticons",
   "private": true,
   "scripts": {
-    "serve": "parcel src/index.html --dist-dir public --cache-dir .parcel-cache -p 9000",
-    "build": "parcel build src/index.html --dist-dir public --cache-dir .parcel-cache",
+    "static": "mkdir -p public && cp -r static/* public/",
+    "serve": "yarn static && parcel src/index.html --dist-dir public --cache-dir .parcel-cache -p 9000",
+    "build": "yarn static && parcel build src/index.html --dist-dir public --cache-dir .parcel-cache",
     "ts-check": "tsc --noEmit",
     "clean": "rm -rf .parcel-cache public",
     "lint": "eslint ./src --no-error-on-unmatched-pattern"
