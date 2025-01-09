@@ -300,7 +300,7 @@ export function App() {
             <Text mb={4}>
               If you feel like contributing to this library checkout our{' '}
               <TextLink
-                href='https://github.com/developmentseed/collecticons-lib'
+                href='https://github.com/developmentseed/collecticons'
                 title='View collecticons icon library'
               >
                 collecticons library
