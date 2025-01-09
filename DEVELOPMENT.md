@@ -17,6 +17,11 @@ If you use [`nvm`](https://github.com/creationix/nvm), activate the desired Node
 nvm install
 ```
 
+You'll also need to use the correct `yarn` version. Enable with
+```
+corepack enable
+```
+
 Install Node modules:
 
 ```
@@ -27,9 +32,9 @@ yarn install
 
 The project uses `yarn workspaces` and `lerna` to manage the monorepo structure.  
 There are three main packages in this project:
-- `@deveed-ui/collecticons-react` - The Collecticons library for React
-- `@deveed-ui/collecticons-chakra` - The Collecticons library specifically for Chakra UI
-- `@deveed-ui/collecticons-showcase` - A private package that contains the showcase website for Collecticons
+- [`@deveed-ui/collecticons-react](./packages/collecticons-react)` - The Collecticons library for React
+- [`@deveed-ui/collecticons-chakra](./packages/collecticons-chakra)` - The Collecticons library specifically for Chakra UI
+- [`@deveed-ui/collecticons-showcase](./showcase)` - A private package that contains the showcase website for Collecticons
 
 The first thing to do is generate the JSX icons from the SVG files, both for the React and Chakra UI packages.
 
@@ -39,4 +44,4 @@ yarn icons
 ```
 The generated icons will be placed in the `lib/icons` directory of each package. This is gitignored so you don't need to worry about them.
 
-Now you can work on each package individually following the respective instructions.
+Now you can work on each package individually following the respective README.md instructions.
