@@ -13,3 +13,7 @@ Fix deployment script that was not building the packages ([#22](https://github.c
 ## 3.0.3
 - Remove icon added by mistake `collection-layers.svg` (not a real collecticon)
 - Fix showcase build script
+
+## 3.1.0
+- Include 7 new icons
+- Update documentation
