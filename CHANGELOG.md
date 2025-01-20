@@ -15,5 +15,5 @@ Fix deployment script that was not building the packages ([#22](https://github.c
 - Fix showcase build script
 
 ## 3.1.0
-- Include 7 new icons
+- Include 7 new icons: `collecticon-brand-bluesky`, `collecticon-brand-stackoverflow`, `collecticon-download-3`, `collecticon-form`, `collecticon-page-plus`, `collecticon-stream`, `collecticon-upload-3`
 - Update documentation
