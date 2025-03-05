@@ -45,5 +45,8 @@
     "packages/*",
     "showcase"
   ],
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
   "packageManager": "yarn@4.6.0"
 }

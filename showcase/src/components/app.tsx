@@ -7,13 +7,9 @@ import {
   Heading,
   Link,
   LinkProps,
-  ListItem,
-  OrderedList,
+  List,
   Text,
-  Tooltip,
-  UnorderedList,
-  VisuallyHidden,
-  keyframes
+  VisuallyHidden
 } from '@chakra-ui/react';
 import Clipboard from 'clipboard';
 import * as collecticons from '@devseed-ui/collecticons-chakra';
@@ -21,24 +17,7 @@ import * as collecticons from '@devseed-ui/collecticons-chakra';
 // @ts-expect-error import image as url
 import bgImg from 'url:../media/main-bg.svg';
 import { StripeTitle } from './stripe-title';
-
-const mainBg = keyframes`  
-  from {
-    background-position: -44vw top;
-  }
-  to {
-    background-position: -48vw top;
-  }
-`;
-
-const fadeIn = keyframes`  
-  from {
-    opacity: 0;
-  }
-  to {
-    background-size: 1;
-  }
-`;
+import { Tooltip } from './ui/tooltip';
 
 const iconNames = Object.keys(collecticons).filter((k) =>
   k.startsWith('Collecticon')
@@ -74,7 +53,7 @@ export function App() {
       bgPos={['-48vw center', '-48vw top', '-80vw center']}
       color='base'
       animation={{
-        md: `${mainBg} 4s ease 0s 1 normal forwards`
+        md: 'mainBg'
       }}
     >
       <Container
@@ -86,7 +65,8 @@ export function App() {
         <Box
           as='header'
           role='banner'
-          animation={`${fadeIn} 1s ease 0s 1`}
+          animation='fade-in'
+          animationDuration='1s'
           textAlign='center'
           padding={{
             base: '2rem',
@@ -134,13 +114,14 @@ export function App() {
           </Text>
           <Text mt='8'>
             <Button
-              as='a'
-              href='collecticons.zip'
+              asChild
               title='Get the icons!'
-              colorScheme='whiteAlpha'
               borderRadius='0'
+              bg='white/16'
             >
-              <span>Download</span>
+              <a href='collecticons.zip'>
+                <span>Download</span>
+              </a>
             </Button>
             <Text
               as='small'
@@ -159,12 +140,13 @@ export function App() {
             <VisuallyHidden>
               <StripeTitle>Showcase</StripeTitle>
             </VisuallyHidden>
-            <UnorderedList
+            <List.Root
               display='flex'
+              flexDirection='row'
               justifyContent='center'
               gap='4'
-              styleType='none'
               flexWrap='wrap'
+              variant='plain'
             >
               {iconNames.map((iconName) => {
                 const Cmp = (
@@ -175,16 +157,16 @@ export function App() {
                 )[iconName];
 
                 return (
-                  <ListItem
+                  <List.Item
                     key={iconName}
                     display='flex'
                     background='rgba(255,255,255,0.16)'
                   >
                     <CollecticonItem Component={Cmp} name={iconName} />
-                  </ListItem>
+                  </List.Item>
                 );
               })}
-            </UnorderedList>
+            </List.Root>
           </Box>
         </Box>
         <Box as='section' mb={{ base: '3rem', md: '4rem' }}>
@@ -193,15 +175,15 @@ export function App() {
             <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
               Downloading the SVG&apos;s
             </Heading>
-            <OrderedList pl={4} mb={8}>
-              <ListItem mb={4}>
+            <List.Root as='ol' pl={4} mb={8}>
+              <List.Item mb={4}>
                 <TextLink href='/collecticons.zip' title='Get the icons!'>
                   Download collecticons
                 </TextLink>
                 .
-              </ListItem>
-              <ListItem mb={4}>Done! ✨</ListItem>
-            </OrderedList>
+              </List.Item>
+              <List.Item mb={4}>Done! ✨</List.Item>
+            </List.Root>
 
             <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
               Collecticons for React
@@ -213,24 +195,24 @@ export function App() {
               </TextLink>
               .
             </Text>
-            <OrderedList pl={4} mb={8}>
-              <ListItem mb={4}>
+            <List.Root as='ol' pl={4} mb={8}>
+              <List.Item mb={4}>
                 <p>Install collecticons.</p>
                 <HighlightBox>
                   <pre>
                     <code>yarn add @devseed-ui/collecticons-react</code>
                   </pre>
                 </HighlightBox>
-              </ListItem>
-              <ListItem mb={4}>
+              </List.Item>
+              <List.Item mb={4}>
                 <p>Simply use an icon in your app.</p>
                 <HighlightBox>
                   <pre>
                     <code>&lt;CollecticonBrandDevelopmentSeed /&gt;</code>
                   </pre>
                 </HighlightBox>
-              </ListItem>
-            </OrderedList>
+              </List.Item>
+            </List.Root>
 
             <Heading as='h3' fontSize={['lg', 'xl', '2xl', '3xl']} mb={4}>
               Collecticons (Chakra UI specific)
@@ -240,26 +222,26 @@ export function App() {
               <TextLink href='https://chakra-ui.com/'>Chakra UI</TextLink>{' '}
               making it possible to use with the Chakra styled system.
             </Text>
-            <OrderedList pl={4} mb={8}>
-              <ListItem mb={4}>
+            <List.Root as='ol' pl={4} mb={8}>
+              <List.Item mb={4}>
                 <p>Install collecticons.</p>
                 <HighlightBox>
                   <pre>
                     <code>yarn add @devseed-ui/collecticons-chakra</code>
                   </pre>
                 </HighlightBox>
-              </ListItem>
-              <ListItem mb={4}>
+              </List.Item>
+              <List.Item mb={4}>
                 <p>Simply use an icon in your app.</p>
                 <HighlightBox>
                   <pre>
                     <code>
-                      {`<CollecticonBrandDevelopmentSeed size={{ base: '4', lg: '8' }} />`}
+                      {`<CollecticonBrandDevelopmentSeed fontSize={{ base: '4', lg: '8' }} />`}
                     </code>
                   </pre>
                 </HighlightBox>
-              </ListItem>
-            </OrderedList>
+              </List.Item>
+            </List.Root>
           </Container>
         </Box>
 
@@ -317,7 +299,8 @@ export function App() {
           fontSize='0.875rem'
           lineHeight='1.25rem'
           opacity='0.64'
-          animation={`${fadeIn} 1s ease 0s 1`}
+          animation='fade-in'
+          animationDuration='1s'
         >
           <Text
             display='flex'
@@ -353,6 +336,8 @@ function CollecticonItem({
   const copyValue = useRef<string>(name);
   copyValue.current = name;
 
+const [isHover, setIsHover] = useState(false);
+
   useEffect(() => {
     if (!triggerElement.current)
       throw new Error('ref for trigger element is not set');
@@ -378,15 +363,23 @@ function CollecticonItem({
   }, []);
 
   return (
-    <Tooltip hasArrow placement='top' label={showCopiedMsg ? 'Copied!' : name}>
+    <Tooltip
+      showArrow
+      positioning={{ placement: 'top' }}
+      content={showCopiedMsg ? 'Copied!' : name}
+      openDelay={0}
+      open={isHover}
+    >
       <Link
         href='#'
         p='4'
         onClick={(e) => e.preventDefault()}
         ref={triggerElement}
         color='white'
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
-        <Component size={{ base: '4', lg: '8' }} />
+        <Component fontSize={{ base: '4', lg: '8' }} />
       </Link>
     </Tooltip>
   );

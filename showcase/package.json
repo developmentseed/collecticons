@@ -12,30 +12,22 @@
     "lint": "eslint ./src --no-error-on-unmatched-pattern"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/react": "^3.8.1",
     "@devseed-ui/collecticons-chakra": "workspace:*",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "framer-motion": "^10.18.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@emotion/react": "^11.14.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@parcel/config-default": "^2.12.0",
     "@parcel/core": "^2.12.0",
     "@parcel/transformer-typescript-tsc": "^2.12.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": ">=18.0.0",
+    "@types/react-dom": ">=18.0.0",
     "clipboard": "^2.0.11",
-    "framer-motion": "^10.18.0",
     "parcel": "^2.12.0",
     "prettier": "^3.3.2",
     "process": "^0.11.10",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "typescript": "^5.4.5"
   }
 }

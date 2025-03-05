@@ -19,7 +19,7 @@ export type Collecticon = React.ForwardRefExoticComponent<
  * @param {function} creatorFn Function to create the collecticon.
  */
 export function createCollecticon(
-  creatorFn: (props: IconPropsWithTitle) => JSX.Element,
+  creatorFn: (props: IconPropsWithTitle) => React.JSX.Element,
   iconSvgProps: IconPropsWithTitle = {}
 ): Collecticon {
   const Collecticon = React.forwardRef<SVGSVGElement, CollecticonProps>(
