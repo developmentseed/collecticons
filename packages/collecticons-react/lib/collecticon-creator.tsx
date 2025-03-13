@@ -6,7 +6,7 @@ interface IconPropsWithTitle extends SVGProps<SVGSVGElement> {
 
 interface CollecticonProps extends IconPropsWithTitle {
   meaningful?: boolean;
-  size?: string;
+  fontSize?: string;
 }
 
 export type Collecticon = React.ForwardRefExoticComponent<
@@ -24,9 +24,9 @@ export function createCollecticon(
 ): Collecticon {
   const Collecticon = React.forwardRef<SVGSVGElement, CollecticonProps>(
     (props, ref) => {
-      const { title, size, meaningful, ...rest } = props;
+      const { title, fontSize, meaningful, ...rest } = props;
 
-      const s = typeof size !== 'undefined' ? size : '1rem';
+      const s = typeof fontSize !== 'undefined' ? fontSize : '1rem';
 
       const iconProps: IconPropsWithTitle = {
         title,
@@ -45,7 +45,7 @@ export function createCollecticon(
       };
       return (
         <svg {...iconProps} ref={ref}>
-          {title && (<title>{title}</title>)}
+          {title && <title>{title}</title>}
           {creatorFn(iconProps)}
         </svg>
       );
