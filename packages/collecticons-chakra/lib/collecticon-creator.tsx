@@ -7,7 +7,7 @@ interface IconPropsWithTitle extends IconProps {
 
 interface CollecticonChakraProps extends IconPropsWithTitle {
   meaningful?: boolean;
-  size?: IconProps['width'];
+  fontSize?: IconProps['fontSize'];
 }
 
 export type CollecticonChakra = React.ForwardRefExoticComponent<
@@ -20,16 +20,16 @@ export type CollecticonChakra = React.ForwardRefExoticComponent<
  * @param {function} creatorFn Function to create the collecticon.
  */
 export function createCollecticon(
-  creatorFn: (props: IconPropsWithTitle) => JSX.Element,
+  creatorFn: (props: IconPropsWithTitle) => React.JSX.Element,
   iconSvgProps: IconPropsWithTitle = {}
 ): CollecticonChakra {
   const CollecticonChakra = React.forwardRef<
     SVGSVGElement,
     CollecticonChakraProps
   >((props, ref) => {
-    const { title, size, meaningful, ...rest } = props;
+    const { title, fontSize, meaningful, ...rest } = props;
 
-    const s = typeof size !== 'undefined' ? size : '1rem';
+    const s = typeof fontSize !== 'undefined' ? fontSize : '1rem';
 
     const iconProps: IconPropsWithTitle = {
       title,
@@ -48,8 +48,10 @@ export function createCollecticon(
     };
     return (
       <Icon {...iconProps} ref={ref}>
-        {title && (<title>{title}</title>)}
-        {creatorFn(iconProps)}
+        <svg>
+          {title && <title>{title}</title>}
+          {creatorFn(iconProps)}
+        </svg>
       </Icon>
     );
   });
