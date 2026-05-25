@@ -48,10 +48,8 @@ export function createCollecticon(
     };
     return (
       <Icon {...iconProps} ref={ref}>
-        <svg>
-          {title && <title>{title}</title>}
-          {creatorFn(iconProps)}
-        </svg>
+        {title && <title>{title}</title>}
+        {creatorFn(iconProps)}
       </Icon>
     );
   });
