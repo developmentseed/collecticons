@@ -1694,8 +1694,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@devseed-ui/collecticons-chakra@workspace:packages/collecticons-chakra"
   dependencies:
-    "@chakra-ui/react": "npm:^3.8.1"
-    "@emotion/react": "npm:^11.14.0"
     "@types/react": "npm:>=18.0.0"
     "@types/react-dom": "npm:>=18.0.0"
     clipboard: "npm:^2.0.11"
